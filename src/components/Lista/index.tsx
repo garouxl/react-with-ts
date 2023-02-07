@@ -1,8 +1,7 @@
-import React from 'react'
-
+import Item from './Item'
 import style from './style.module.scss'
 
-const { listaTarefas, item: lineItem } = style
+const { listaTarefas, item: itemStyle } = style
 
 const Lista = () => {
   const tarefas = [
@@ -22,11 +21,8 @@ const Lista = () => {
     <aside className={listaTarefas}>
       <h2> Estudos do dia </h2>
       <ul>
-        {tarefas.map((item) => (
-          <li key={item.id} className={lineItem}>
-            <h3>{item.tarefa}</h3>
-            <span>{item.tempo}</span>
-          </li>
+        {tarefas.map(({ id, tarefa, tempo }) => (
+          <Item key={id} {...{ tarefa, tempo, itemStyle }} />
         ))}
       </ul>
     </aside>

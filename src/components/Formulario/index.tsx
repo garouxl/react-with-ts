@@ -1,4 +1,3 @@
-import React from 'react'
 import Botao from '../Botao'
 
 import style from  './style.module.scss';
