@@ -1,6 +1,6 @@
 import Botao from '../Botao'
 
-import style from  './style.module.scss';
+import style from  './Formulario.module.scss';
 
 const Formulario = () => {
   return (

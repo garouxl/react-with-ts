@@ -1,5 +1,5 @@
 import Item from './Item'
-import style from './style.module.scss'
+import style from './Lista.module.scss'
 
 const { listaTarefas, item: itemStyle } = style
 

@@ -1,7 +1,7 @@
 import Botao from '../Botao'
 import Relogio from './Relogio'
 
-import style from './style.module.scss'
+import style from './Cronometro.module.scss'
 
 const Cronometro = () => {
   return (

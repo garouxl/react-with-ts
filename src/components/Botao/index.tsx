@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import style from './style.module.scss'
+import style from './Botao.module.scss'
 
 const Botao = ({ texto }: { texto: string }) => {
   const [estaAtivo, setEstaAtivo] = useState(false)
