@@ -1,16 +1,16 @@
 const Item = ({
-  tarefa,
-  tempo,
+  task,
+  time,
   itemStyle,
 }: {
-  tarefa: string
-  tempo: string
+  task: string
+  time: string
   itemStyle: string
 }) => {
   return (
     <li className={itemStyle}>
-      <h3>{tarefa}</h3>
-      <span>{tempo}</span>
+      <h3>{task}</h3>
+      <span>{time}</span>
     </li>
   )
 }

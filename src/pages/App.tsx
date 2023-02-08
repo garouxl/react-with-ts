@@ -1,15 +1,15 @@
-import Formulario from '../components/Formulario'
-import Lista from '../components/Lista'
-import Cronometro from '../components/Cronometro';
+import Form from '../components/Form'
+import List from '../components/List'
+import Chronometer from '../components/Chronometer';
 
 import style from  './App.module.scss';
 
 function App() {
   return (
     <div className={style.AppStyle}>
-      <Formulario />
-      <Lista />
-      <Cronometro />
+      <Form />
+      <List />
+      <Chronometer />
     </div>
   );
 }
