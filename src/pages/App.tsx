@@ -29,7 +29,7 @@ function App() {
     <div className={style.AppStyle}>
       <Form handleTasks={handleTasks} />
       <List tasks={tasks} selectTask={selectTask} />
-      <Chronometer time={selected?.time ? selected.time : '00:00:00'} />
+      <Chronometer selected={selected} />
     </div>
   )
 }

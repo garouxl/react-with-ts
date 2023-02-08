@@ -1,10 +1,23 @@
+import { ITasks } from '../../types/types'
 import Button from '../Button'
 import Clock from './Clock'
 
 import style from './Chronometer.module.scss'
 import { timeToSeconds } from '../../common/utils/date'
+import { useEffect, useState } from 'react'
 
-const Chronometer = ({ time }: { time: string }) => {
+interface Props {
+  selected: ITasks | undefined
+}
+
+const Chronometer = ({ selected }:Props ) => {
+
+  const [time, setTime] = useState<string>('00:00:00')
+
+  useEffect(() => {
+    if (selected?.time !== undefined)
+      setTime(selected?.time)
+  }, [selected?.time])
 
   return (
     <div className={style.chronometer}>
