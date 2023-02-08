@@ -1,6 +1,7 @@
 import style from './Clock.module.scss'
 
-const Clock = () => {
+const Clock = ({time}:{time: number}) => {
+  console.log(time)
   return (
     <>
       <span className={style.clockNumber}>0</span>

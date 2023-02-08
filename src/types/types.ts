@@ -1,14 +1,9 @@
 export interface ITasks {
-  id?: number
-  task?: string
-  time?: string
-}
-
-export interface IList {
-  id?: number
-  task?: string
-  time?: string
-  itemStyle?: string
+  id: number
+  task: string
+  time: string
+  selected: boolean
+  finished: boolean
 }
 
 export interface IButton {

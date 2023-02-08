@@ -16,6 +16,7 @@ const Form = ({handleTasks}: {handleTasks: Function}) => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault()
       handleTasks(state)
+      setState(initialData)
   }
 
   return (

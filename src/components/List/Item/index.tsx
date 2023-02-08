@@ -1,15 +1,32 @@
-import { IList } from "../../../types/types"
+import { ITasks } from '../../../types/types'
 
-const Item = ({
-  id,
-  task,
-  time,
-  itemStyle,
-}: IList) => {
+import style from './Item.module.scss'
+
+interface Props extends ITasks {
+  selectTask: (selectTask: ITasks) => void
+}
+
+const Item = ({ id, task, time, finished, selected, selectTask }: Props) => {
   return (
-    <li className={itemStyle}>
-      <h3>{id}: {task}</h3>
+    <li
+      className={`${style.item} ${selected ? style.itemSelected : ''}`}
+      onClick={() =>
+        selectTask({
+          id,
+          task,
+          time,
+          finished,
+          selected,
+        })
+      }
+    >
+      <h3>
+        {id}: {task}
+      </h3>
       <span>{time}</span>
+      <p>
+        {String(finished)} - {String(selected)}
+      </p>
     </li>
   )
 }
