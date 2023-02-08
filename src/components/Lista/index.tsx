@@ -4,22 +4,21 @@ import style from './Lista.module.scss'
 
 const { listaTarefas, item: itemStyle } = style
 
+const data = [
+  {
+    id: 1,
+    tarefa: 'React',
+    tempo: '02:00:00',
+  },
+  {
+    id: 2,
+    tarefa: 'Javascript',
+    tempo: '01:00:00',
+  },
+]
+
 const Lista = () => {
-  const data = [
-    {
-      id: 1,
-      tarefa: 'React',
-      tempo: '02:00:00',
-    },
-    {
-      id: 2,
-      tarefa: 'Javascript',
-      tempo: '01:00:00',
-    },
-  ]
-
   const [tarefas, setTarefas] = useState(() => data)
-
   const handleClick = () => {
     setTarefas([
       ...tarefas,
