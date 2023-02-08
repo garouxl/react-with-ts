@@ -1,15 +1,14 @@
+import { IList } from "../../../types/types"
+
 const Item = ({
+  id,
   task,
   time,
   itemStyle,
-}: {
-  task: string
-  time: string
-  itemStyle: string
-}) => {
+}: IList) => {
   return (
     <li className={itemStyle}>
-      <h3>{task}</h3>
+      <h3>{id}: {task}</h3>
       <span>{time}</span>
     </li>
   )
