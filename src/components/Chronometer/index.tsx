@@ -15,9 +15,9 @@ const Chronometer = ({ selected }:Props ) => {
   const [time, setTime] = useState<string>('00:00:00')
 
   useEffect(() => {
-    if (selected?.time !== undefined)
+    if (selected && selected?.time !== undefined)
       setTime(selected?.time)
-  }, [selected?.time])
+  }, [selected])
 
   return (
     <div className={style.chronometer}>
