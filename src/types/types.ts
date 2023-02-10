@@ -9,6 +9,7 @@ export interface ITasks {
 export interface IButton {
   texto: string
   type?: 'button' | 'submit' | 'reset' | undefined
+  action?: () => void
 }
 
 export interface TInput {

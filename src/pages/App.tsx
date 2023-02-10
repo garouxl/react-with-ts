@@ -1,5 +1,5 @@
 import { ITasks } from '../types/types'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Form from '../components/Form'
 import List from '../components/List'
 import Chronometer from '../components/Chronometer'
@@ -15,21 +15,39 @@ function App() {
     ])
   }
 
-  const [selected, setSelected] = useState<ITasks>();
+  const [selected, setSelected] = useState<ITasks>()
+
   const selectTask = (selectedTask: ITasks) => {
     setSelected(selectedTask)
     setTasks(
-      tasks.map(task => {
-        return { ...task, selected: task.id === selectedTask.id ? true : false  }
+      tasks.map((task) => {
+        return { ...task, selected: task.id === selectedTask.id ? true : false }
       })
     )
-
   }
+
+  const finishTask = () => {
+    if (selected) {
+      setTasks((tasks) =>
+        tasks.map((task) => {
+          if (task.id === selected?.id) {
+            return {
+              ...task,
+              selected: false,
+              finished: true,
+            }
+          }
+          return task
+        })
+      )
+    }
+  }
+
   return (
     <div className={style.AppStyle}>
       <Form handleTasks={handleTasks} />
       <List tasks={tasks} selectTask={selectTask} />
-      <Chronometer selected={selected} />
+      <Chronometer selected={selected} finishTask={finishTask} />
     </div>
   )
 }

@@ -9,16 +9,20 @@ interface Props extends ITasks {
 const Item = ({ id, task, time, finished, selected, selectTask }: Props) => {
   return (
     <li
-      className={`${style.item} ${selected ? style.itemSelected : ''}`}
-      onClick={() =>
-        selectTask({
-          id,
-          task,
-          time,
-          finished,
-          selected,
-        })
-      }
+      className={`${style.item} ${selected ? style.itemSelected : ''} ${
+        finished ? style.itemFinished : ''
+      }`.trim()}
+      onClick={() => {
+        if (!finished) {
+          selectTask({
+            id,
+            task,
+            time,
+            finished,
+            selected,
+          })
+        }
+      }}
     >
       <h3>
         {id}: {task}
@@ -27,6 +31,7 @@ const Item = ({ id, task, time, finished, selected, selectTask }: Props) => {
       <p>
         {String(finished)} - {String(selected)}
       </p>
+      <div className={style.finished}></div>
     </li>
   )
 }

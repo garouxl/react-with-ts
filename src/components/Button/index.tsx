@@ -4,9 +4,10 @@ import style from './Button.module.scss'
 const Button = ({
   texto,
   type = undefined,
+  action,
 }: IButton) => {
   return (
-    <button type={type} className={style.button}>
+    <button type={type} className={style.button} onClick={action} >
       {texto}
     </button>
   )

@@ -1,10 +1,10 @@
 import style from './Clock.module.scss'
 
 interface Props {
-  time: number
+  time?: number
 }
 
-const Clock = ({ time }: Props) => {
+const Clock = ({ time = 0 }: Props) => {
   const minutes = Math.floor(time / 60)
   const seconds = time % 60
   const [minuteDecimal, minuteUnite] = String(minutes).padStart(2, '0')
